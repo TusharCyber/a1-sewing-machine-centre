@@ -1,17 +1,22 @@
 import React from 'react';
-import { Award, ShieldCheck, ThumbsUp, HeartHandshake, MapPin, Star, CheckCircle2, Wrench, Sparkles } from 'lucide-react';
+import { Award, ShieldCheck, ThumbsUp, HeartHandshake, MapPin, Star, CheckCircle2, Wrench, Sparkles, Store } from 'lucide-react';
 
 export default function WhyChooseUs() {
   const pillars = [
     {
       icon: ShieldCheck,
       title: 'Complete Machine Inspection & Full-Body Care',
-      desc: 'We perform thorough multi-point inspection and full-body servicing on every machine — ensuring long-lasting smooth performance without partial work.'
+      desc: 'We perform thorough multi-point inspection and full-body servicing on every Singer, USHA, and Merritt machine brought to our store.'
     },
     {
-      icon: Wrench,
-      title: 'Professional Servicing Expertise',
-      desc: 'Master technician care with over 25+ years of hands-on expertise calibrating vintage cast iron to modern computerized sewing machines.'
+      icon: Award,
+      title: 'Singer, USHA & Merritt Specialist',
+      desc: 'Master technician care with over 25+ years of specialized hands-on expertise repairing and calibrating Singer, USHA, and Merritt machines.'
+    },
+    {
+      icon: Store,
+      title: 'Trusted In-Store Service Centre',
+      desc: 'Convenient store location at 41, Alagu Nagar, Civil Aerodrome Post, Coimbatore for reliable in-person consultation and machine drop-off.'
     },
     {
       icon: HeartHandshake,
@@ -19,35 +24,30 @@ export default function WhyChooseUs() {
       desc: 'Friendly guidance on WhatsApp, clear service policy explanations, free operating demos, and fast response times.'
     },
     {
-      icon: MapPin,
-      title: 'Experienced Local Service in Coimbatore',
-      desc: 'Established heritage in Alagu Nagar, Civil Aerodrome Post area, serving thousands of local tailors, boutiques, and households.'
-    },
-    {
       icon: ThumbsUp,
       title: 'Quality Machines & Genuine Accessories',
-      desc: 'Authorized multi-brand sales for USHA, Singer, Brother, Jack, and Juki along with 100% genuine factory spare parts and copper motors.'
+      desc: 'Authorized sales for top brands along with 100% genuine factory spare parts, Organ needles, and heavy-duty copper motors.'
     }
   ];
 
   const testimonials = [
     {
       name: 'K. Rajamani',
-      role: 'Boutique Owner, Peelamedu',
+      role: 'Home Boutique Tailor, Peelamedu',
       rating: 5,
-      comment: 'A1 Sewing Machine Centre has been servicing my boutique’s Jack industrial machines for over 8 years. Their complete servicing approach makes machines feel like brand new every time!'
+      comment: 'A1 Sewing Machine Centre has been servicing my Singer and USHA machines for over 8 years. Their complete servicing approach makes machines feel like brand new every time!'
     },
     {
       name: 'S. Lakshmi',
       role: 'Home Tailor, Alagu Nagar',
       rating: 5,
-      comment: 'Brought my USHA machine after thread skipping issues. Technician explained their full-body inspection process clearly and fixed everything on the same day. Outstanding!'
+      comment: 'Brought my USHA Wonder Stitch machine after thread skipping issues. Technician explained their full-body inspection process clearly and fixed everything at their store on the same day!'
     },
     {
       name: 'M. Duraisamy',
       role: 'Tailoring Shop, Hopes',
       rating: 5,
-      comment: 'Very honest service. They inspect the whole machine thoroughly and tune timing and tension perfectly. Best sewing service in Coimbatore.'
+      comment: 'Very honest service for Merritt and Singer machines. They inspect the whole machine thoroughly at their store and tune timing and tension perfectly.'
     }
   ];
 
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
           </div>
           <h2 className="section-title">Why Choose A1 Sewing Machine Centre?</h2>
           <p className="section-subtitle">
-            Built on complete-service integrity, precision craftsmanship, and decades of trust with Coimbatore tailors and households.
+            Built on complete-service integrity, specialized Singer, USHA & Merritt expertise, and decades of trust with Coimbatore tailors.
           </p>
         </div>
 
@@ -148,7 +148,7 @@ export default function WhyChooseUs() {
             <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-green)' }}>
               100%
             </div>
-            <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 600 }}>Full Inspection Care</div>
+            <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: 600 }}>In-Store Full Inspection</div>
           </div>
           <div>
             <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-blue)' }}>

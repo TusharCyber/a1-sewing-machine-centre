@@ -9,7 +9,7 @@ import WhyChooseUs from './components/WhyChooseUs';
 import ContactSection from './components/ContactSection';
 import MobileActionBar from './components/MobileActionBar';
 import Footer from './components/Footer';
-import { X, Wrench, Calendar, CheckCircle2, MessageCircle, Phone, Camera, ShieldCheck } from 'lucide-react';
+import { X, Wrench, Calendar, CheckCircle2, MessageCircle, Phone, Camera, ShieldCheck, Store } from 'lucide-react';
 
 export default function App() {
   const [theme, setTheme] = useState('light');
@@ -18,10 +18,10 @@ export default function App() {
   // Booking Wizard Form State
   const [bookingStep, setBookingStep] = useState(1);
   const [bookingData, setBookingData] = useState({
-    brand: 'USHA',
+    brand: 'Singer',
     model: '',
     problem: 'Full-Body Servicing & Complete Inspection',
-    serviceOption: 'Store Visit (Civil Aerodrome Post)',
+    serviceOption: 'Store Visit (Civil Aerodrome Post, Coimbatore)',
     name: '',
     phone: '',
     date: '',
@@ -55,18 +55,18 @@ export default function App() {
     // Build pre-filled WhatsApp payload with requested prompts
     const textPayload = `Hello A1 Sewing Machine Centre,
 
-I would like to enquire about sewing machine servicing. My machine details are:
+I would like to enquire about Singer / USHA / Merritt machine servicing at your store. My machine details are:
 
-• Brand: ${bookingData.brand || 'Not specified'}
+• Brand (Singer/USHA/Merritt): ${bookingData.brand}
 • Machine Model: ${bookingData.model || 'Not known'}
 • Description of Problem: ${bookingData.problem}
-• Service Option: ${bookingData.serviceOption}
+• Service Mode: Store Visit (Civil Aerodrome Post)
 • Customer Name: ${bookingData.name}
 • Customer Phone: ${bookingData.phone}
 • Preferred Date: ${bookingData.date || 'As soon as possible'}
 • Photos/Videos: ${bookingData.hasPhotos}
 
-Please advise on service inspection appointment. Thank you!`;
+I will bring the machine to your store at Civil Aerodrome Post, Coimbatore. Thank you!`;
 
     const encodedText = encodeURIComponent(textPayload);
     window.open(`https://wa.me/919894194230?text=${encodedText}`, '_blank');
@@ -109,7 +109,7 @@ Please advise on service inspection appointment. Thank you!`;
                 </div>
                 <div>
                   <h3 className="modal-title">Book Service on WhatsApp</h3>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>A1 Complete Sewing Machine Service • Coimbatore</div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Singer • USHA • Merritt Repair Centre • Coimbatore</div>
                 </div>
               </div>
               <button onClick={handleCloseBooking} className="modal-close">
@@ -132,7 +132,7 @@ Please advise on service inspection appointment. Thank you!`;
                 gap: '0.5rem'
               }}>
                 <ShieldCheck size={18} style={{ color: 'var(--accent-gold)', flexShrink: 0 }} />
-                <span><strong>Policy Assurance:</strong> Every servicing includes a complete inspection and full-body servicing for peak performance.</span>
+                <span><strong>In-Store Policy:</strong> We provide complete multi-point inspection & full-body servicing exclusively for Singer, USHA, and Merritt machines brought to our store.</span>
               </div>
 
               {bookingConfirmed ? (
@@ -144,13 +144,13 @@ Please advise on service inspection appointment. Thank you!`;
                     Opening WhatsApp...
                   </h3>
                   <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-                    Your machine details are formatted. Please complete sending your message on WhatsApp.
+                    Your machine details are formatted. Please complete sending your message on WhatsApp and bring your machine to our store.
                   </p>
                   <div style={{ backgroundColor: 'var(--bg-subtle)', padding: '1rem', borderRadius: 'var(--radius-md)', textAlign: 'left', fontSize: '0.88rem', marginBottom: '1.5rem' }}>
                     <div><strong>Customer:</strong> {bookingData.name} ({bookingData.phone})</div>
                     <div><strong>Brand & Model:</strong> {bookingData.brand} {bookingData.model}</div>
                     <div><strong>Problem:</strong> {bookingData.problem}</div>
-                    <div><strong>Service Mode:</strong> {bookingData.serviceOption}</div>
+                    <div><strong>Location:</strong> Store Visit (Civil Aerodrome Post)</div>
                   </div>
                   <button onClick={handleCloseBooking} className="btn btn-navy">
                     Close Window
@@ -177,7 +177,7 @@ Please advise on service inspection appointment. Thank you!`;
                           {num}
                         </span>
                         <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-main)' }}>
-                          {num === 1 ? 'Machine Brand & Model' : num === 2 ? 'Problem Details' : 'Your Details'}
+                          {num === 1 ? 'Select Brand & Model' : num === 2 ? 'Problem Details' : 'Your Details'}
                         </span>
                       </div>
                     ))}
@@ -187,21 +187,21 @@ Please advise on service inspection appointment. Thank you!`;
                   {bookingStep === 1 && (
                     <div>
                       <div className="form-group">
-                        <label className="form-label">Sewing Machine Brand *</label>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.5rem', marginBottom: '1rem' }}>
-                          {['USHA', 'Singer', 'Brother', 'Jack', 'Juki', 'Merritt'].map((b) => (
+                        <label className="form-label">Select Machine Brand (Specialized Service) *</label>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
+                          {['Singer', 'USHA', 'Merritt'].map((b) => (
                             <button
                               key={b}
                               type="button"
                               onClick={() => setBookingData({ ...bookingData, brand: b })}
                               style={{
-                                padding: '0.65rem',
-                                borderRadius: 'var(--radius-sm)',
-                                border: '1px solid',
+                                padding: '1rem',
+                                borderRadius: 'var(--radius-md)',
+                                border: '2px solid',
                                 borderColor: bookingData.brand === b ? 'var(--accent-gold)' : 'var(--border-color)',
                                 backgroundColor: bookingData.brand === b ? 'var(--accent-gold-light)' : 'var(--bg-main)',
-                                fontSize: '0.88rem',
-                                fontWeight: 700,
+                                fontSize: '1rem',
+                                fontWeight: 800,
                                 color: 'var(--text-main)',
                                 cursor: 'pointer'
                               }}
@@ -217,7 +217,7 @@ Please advise on service inspection appointment. Thank you!`;
                         <input
                           type="text"
                           className="form-input"
-                          placeholder="e.g. Wonder Stitch, F4, DDL-8700"
+                          placeholder="e.g. Wonder Stitch, Promise, Traditional Cast Iron"
                           value={bookingData.model}
                           onChange={(e) => setBookingData({ ...bookingData, model: e.target.value })}
                         />
@@ -250,15 +250,21 @@ Please advise on service inspection appointment. Thank you!`;
                       </div>
 
                       <div className="form-group">
-                        <label className="form-label">Service Option *</label>
-                        <select
-                          className="form-select"
-                          value={bookingData.serviceOption}
-                          onChange={(e) => setBookingData({ ...bookingData, serviceOption: e.target.value })}
-                        >
-                          <option value="Store Visit (Civil Aerodrome Post)">Bring Machine to Store (Civil Aerodrome Post)</option>
-                          <option value="Doorstep Pickup (Coimbatore Region)">Request Doorstep Pickup in Coimbatore</option>
-                        </select>
+                        <label className="form-label">Service Centre Location</label>
+                        <div style={{
+                          padding: '0.85rem 1rem',
+                          backgroundColor: 'var(--bg-subtle)',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '0.88rem',
+                          fontWeight: 600,
+                          color: 'var(--text-main)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.5rem'
+                        }}>
+                          <Store size={18} style={{ color: 'var(--accent-gold)' }} />
+                          <span>Store Visit: 41, Alagu Nagar, Civil Aerodrome Post, CBE</span>
+                        </div>
                       </div>
 
                       <div style={{
@@ -271,7 +277,7 @@ Please advise on service inspection appointment. Thank you!`;
                         gap: '0.5rem'
                       }}>
                         <Camera size={16} style={{ color: 'var(--accent-gold)' }} />
-                        <span>You will be able to attach photos/videos directly in WhatsApp after clicking proceed.</span>
+                        <span>You can attach photos/videos of your machine problem directly in WhatsApp.</span>
                       </div>
 
                       <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem' }}>
@@ -323,7 +329,7 @@ Please advise on service inspection appointment. Thank you!`;
                       </div>
 
                       <div className="form-group">
-                        <label className="form-label">Preferred Service Date</label>
+                        <label className="form-label">Preferred Visit Date</label>
                         <input
                           type="date"
                           className="form-input"

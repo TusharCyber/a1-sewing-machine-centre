@@ -1,11 +1,11 @@
 import React from 'react';
-import { Phone, MessageCircle, Wrench, ShieldCheck, CheckCircle2, Star, Award, Clock, Truck, Camera, ChevronRight } from 'lucide-react';
+import { Phone, MessageCircle, Wrench, ShieldCheck, CheckCircle2, Star, Award, Clock, MapPin, Camera, ChevronRight } from 'lucide-react';
 
 export default function Hero({ onOpenBookingModal }) {
-  const brands = ['USHA', 'SINGER', 'BROTHER', 'JACK', 'JUKI', 'MERRITT', 'REVO'];
+  const brands = ['SINGER', 'USHA', 'MERRITT'];
 
   const defaultWhatsAppText = encodeURIComponent(
-    `Hello A1 Sewing Machine Centre, I would like to enquire about sewing machine servicing.\n\nMy machine details are:\n• Brand:\n• Model (if known):\n• Problem Description:\n\n(I can also attach photos/videos of the problem)`
+    `Hello A1 Sewing Machine Centre, I would like to enquire about sewing machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n\n(I can also attach photos/videos of the problem)`
   );
 
   return (
@@ -44,7 +44,7 @@ export default function Hero({ onOpenBookingModal }) {
               marginBottom: '1.25rem',
               letterSpacing: '-0.02em'
             }}>
-              Trusted Sewing Machine <span style={{ color: 'var(--accent-gold)', position: 'relative', display: 'inline-block' }}>Sales & Complete Service</span> in Coimbatore
+              Trusted Sewing Machine <span style={{ color: 'var(--accent-gold)', position: 'relative', display: 'inline-block' }}>Sales & Service</span> in Coimbatore
             </h1>
 
             <p style={{
@@ -54,7 +54,7 @@ export default function Hero({ onOpenBookingModal }) {
               lineHeight: 1.6,
               maxWidth: '640px'
             }}>
-              Authorized sales for domestic & industrial machines, genuine spare parts, and <strong>complete full-body servicing</strong>. Every machine receives a comprehensive multi-point inspection for smooth, long-lasting performance.
+              Specialized expert repair and complete full-body servicing exclusively for <strong>Singer, USHA, and Merritt</strong> sewing machines. Bring your machine to our store at Civil Aerodrome Post, Coimbatore for master technician care.
             </p>
 
             {/* Complete Service Assurance Card */}
@@ -68,10 +68,10 @@ export default function Hero({ onOpenBookingModal }) {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, color: 'var(--accent-gold)', fontSize: '0.92rem', marginBottom: '0.2rem' }}>
                 <ShieldCheck size={18} />
-                <span>Our Complete Service Commitment</span>
+                <span>Our Complete In-Store Service Policy</span>
               </div>
               <p style={{ fontSize: '0.86rem', color: 'var(--text-main)', margin: 0, lineHeight: 1.5 }}>
-                When you bring your sewing machine to us, our master technicians perform a <strong>complete inspection and full-body servicing</strong>. We don't cut corners with partial repairs — ensuring your machine runs at peak condition.
+                When you bring your <strong>Singer, USHA, or Merritt</strong> sewing machine to our store, our technician performs a <strong>complete inspection and full-body servicing</strong>. We do not provide partial repairs — ensuring your machine receives comprehensive care for smooth performance.
               </p>
             </div>
 
@@ -98,8 +98,8 @@ export default function Hero({ onOpenBookingModal }) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.85rem' }}>
               {[
                 { icon: ShieldCheck, title: 'Complete Full-Body Servicing' },
-                { icon: Camera, title: 'Send Photos/Videos on WhatsApp' },
-                { icon: Truck, title: 'Doorstep Pickup in Coimbatore' },
+                { icon: Award, title: 'Singer, USHA & Merritt Specialist' },
+                { icon: MapPin, title: 'In-Store Service at Civil Aerodrome Post' },
                 { icon: Star, title: '4.9/5 Rating (15,000+ Serviced)' }
               ].map((item, idx) => {
                 const IconComponent = item.icon;
@@ -130,19 +130,19 @@ export default function Hero({ onOpenBookingModal }) {
                 position: 'absolute',
                 top: '-15px',
                 right: '20px',
-                backgroundColor: 'var(--accent-green)',
+                backgroundColor: 'var(--accent-gold)',
                 color: '#ffffff',
                 padding: '0.35rem 0.85rem',
                 borderRadius: 'var(--radius-full)',
                 fontWeight: 700,
                 fontSize: '0.8rem',
-                boxShadow: '0 4px 10px rgba(37, 211, 102, 0.3)',
+                boxShadow: '0 4px 10px rgba(217, 119, 6, 0.3)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.3rem'
               }}>
-                <MessageCircle size={14} />
-                <span>WhatsApp Service Only</span>
+                <Award size={14} />
+                <span>Singer • USHA • Merritt</span>
               </div>
 
               {/* Graphic Sewing Machine Service Badge Showcase */}
@@ -185,18 +185,18 @@ export default function Hero({ onOpenBookingModal }) {
                 </div>
 
                 <h3 style={{ fontSize: '1.35rem', color: '#ffffff', marginBottom: '0.2rem', fontWeight: 800 }}>
-                  A1 Complete Service Centre
+                  A1 Service Centre
                 </h3>
                 <p style={{ fontSize: '0.85rem', color: '#cbd5e1', maxWidth: '300px' }}>
-                  Full Inspection • Full-Body Care • Genuine Spares
+                  Singer • USHA • Merritt Repair Centre
                 </p>
 
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.85rem' }}>
                   <span style={{ backgroundColor: 'rgba(37, 211, 102, 0.25)', color: '#4ade80', padding: '0.2rem 0.6rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
-                    ● Fast WhatsApp Response
+                    ● In-Store Service
                   </span>
                   <span style={{ backgroundColor: 'rgba(245, 158, 11, 0.25)', color: '#fbbf24', padding: '0.2rem 0.6rem', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 600 }}>
-                    Coimbatore
+                    Civil Aerodrome Post
                   </span>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function Hero({ onOpenBookingModal }) {
                   <span>How to Enquire for Service:</span>
                 </div>
                 <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                  Click WhatsApp → Share Brand & Model → Describe Issue → Send Photo/Video of Machine.
+                  Click WhatsApp → Share Machine Details (Singer / USHA / Merritt) → Send Photo/Video of Problem → Bring Machine to Store.
                 </div>
                 <a
                   href={`https://wa.me/919894194230?text=${defaultWhatsAppText}`}
@@ -242,16 +242,15 @@ export default function Hero({ onOpenBookingModal }) {
       }}>
         <div className="container">
           <div style={{ textAlign: 'center', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '0.08em', marginBottom: '0.75rem' }}>
-            Authorized Retailer & Precision Repair Service for Top Brands
+            Specialized Master Technicians for Premier Brands
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '3rem' }}>
             {brands.map((b) => (
               <span key={b} style={{
                 fontFamily: 'var(--font-heading)',
-                fontSize: '1.25rem',
+                fontSize: '1.4rem',
                 fontWeight: 800,
                 color: 'var(--primary-navy)',
-                opacity: 0.8,
                 letterSpacing: '0.05em'
               }}>
                 {b}

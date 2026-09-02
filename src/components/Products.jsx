@@ -358,9 +358,9 @@ export default function Products({ onSelectProductForEnquiry }) {
                     A1 Trust Package Included:
                   </div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-main)' }}>
-                    • Free On-Site / Store Demonstration & Training in Coimbatore<br/>
+                    • Free Store Demonstration & Training in Coimbatore<br/>
                     • Official Brand Warranty & A1 Service Backup<br/>
-                    • Doorstep Delivery available in Civil Aerodrome Post & CBE region
+                    • Store Pickup & Service at 41, Alagu Nagar, Civil Aerodrome Post
                   </div>
                 </div>
 

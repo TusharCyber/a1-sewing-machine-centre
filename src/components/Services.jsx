@@ -1,43 +1,43 @@
 import React from 'react';
-import { Wrench, Shield, Check, Clock, Truck, Settings, AlertCircle, MessageCircle, ArrowRight, ShieldCheck, CheckCircle2, FileText, Camera } from 'lucide-react';
+import { Wrench, Shield, Check, Clock, MapPin, Settings, AlertCircle, MessageCircle, ArrowRight, ShieldCheck, CheckCircle2, FileText, Camera, Store } from 'lucide-react';
 
 export default function Services({ onOpenBookingModal }) {
   const serviceList = [
     {
       icon: Settings,
       title: 'Complete Sewing Machine Service & Full-Body Care',
-      desc: 'Our flagship service: Every machine receives a full multi-point inspection, thorough disassembly, internal gear cleaning, friction reduction oiling, and timing calibration.',
+      desc: 'Our flagship service for Singer, USHA & Merritt machines: Every machine receives a full multi-point inspection, thorough disassembly, gear cleaning, friction reduction oiling, and stitch calibration.',
       benefits: ['Full-body deep cleaning', 'Complete multi-point inspection', 'Free stitch testing guarantee']
     },
     {
       icon: Wrench,
       title: 'Stitch Calibration & Tension Alignment',
-      desc: 'Expert solution for thread breaking, skipped stitches, uneven lower thread loops, and cloth puckering across all fabric types.',
-      benefits: ['Zero thread snap guarantee', 'All thread types calibrated', 'Fast turnaround']
+      desc: 'Expert solution for thread breaking, skipped stitches, uneven lower thread loops, and cloth puckering on Singer, USHA, and Merritt sewing machines.',
+      benefits: ['Zero thread snap guarantee', 'All fabric types calibrated', 'Fast store turnaround']
     },
     {
       icon: Shield,
       title: 'Genuine Spare Parts Replacement',
-      desc: 'Replacement of worn shuttle hooks, bobbin cases, needle bars, gears, and pressure feet with 100% genuine factory parts.',
-      benefits: ['Official manufacturer parts', 'Longer machine life', 'Original warranty backup']
+      desc: 'Replacement of worn shuttle hooks, bobbin cases, needle bars, gears, and pressure feet with 100% genuine factory Singer, USHA, and Merritt parts.',
+      benefits: ['100% original factory parts', 'Longer machine life', 'Original backup parts']
     },
     {
       icon: Clock,
       title: 'Electric Motor Fitting & Power Conversion',
-      desc: 'Convert manual hand-operated or foot-treadle machines to electric power with copper winding motors and smooth speed pedal control.',
+      desc: 'Convert manual hand-operated or foot-treadle Singer, USHA, or Merritt machines to electric power with copper winding motors and speed foot pedal control.',
       benefits: ['5x faster sewing speed', 'Effortless foot pedal', 'Safety tested wiring']
     },
     {
-      icon: Truck,
-      title: 'Doorstep Pickup & Drop in Coimbatore',
-      desc: 'Can’t visit our store? We offer doorstep pickup and drop servicing across Civil Aerodrome Post, Peelamedu, Hopes, Singanallur & nearby areas.',
-      benefits: ['Safe machine transit', 'Schedule at your convenience', 'On-site quick checks']
+      icon: Store,
+      title: 'In-Store Inspection & Technician Service',
+      desc: 'Bring your sewing machine to our store at Civil Aerodrome Post, Coimbatore. Our master technician performs complete multi-point inspection and full-body servicing on site.',
+      benefits: ['Direct technician consultation', 'Transparent estimate', 'Store handover']
     },
     {
       icon: AlertCircle,
-      title: 'Commercial & Industrial High-Speed Repair',
-      desc: 'Specialized high-speed repairs for Jack, Juki, Brother, and Merritt industrial lockstitch & overlock machines used in boutiques and factories.',
-      benefits: ['Minimal shop downtime', 'Master mechanic inspection', 'Bulk service discounts']
+      title: 'Specialized Singer, USHA & Merritt Repair',
+      desc: 'Focused technical expertise exclusively dedicated to vintage cast iron, domestic electric, and heavy-duty sewing machines manufactured by Singer, USHA, and Merritt.',
+      benefits: ['Specialized master mechanic', 'Zero guesswork', 'Guaranteed craftsmanship']
     }
   ];
 
@@ -45,17 +45,17 @@ export default function Services({ onOpenBookingModal }) {
     {
       number: '1',
       title: 'Contact via WhatsApp',
-      desc: 'Click any WhatsApp button on our site to connect directly with our Coimbatore service team.'
+      desc: 'Click any WhatsApp button on our site to connect directly with our Coimbatore store service team.'
     },
     {
       number: '2',
       title: 'Share Machine Details & Media',
-      desc: 'Tell us your machine brand, model, issue description, and send photos or short videos of the problem.'
+      desc: 'Tell us your machine brand (Singer, USHA, or Merritt), model, issue description, and send photos or short videos.'
     },
     {
       number: '3',
-      title: 'Bring or Send Machine',
-      desc: 'Bring your machine to our centre at Civil Aerodrome Post or schedule doorstep pickup in Coimbatore.'
+      title: 'Bring Machine to Store',
+      desc: 'Bring your machine to our service centre at 41, Alagu Nagar, Civil Aerodrome Post, Coimbatore.'
     },
     {
       number: '4',
@@ -65,12 +65,12 @@ export default function Services({ onOpenBookingModal }) {
     {
       number: '5',
       title: 'Comprehensive Servicing & Handover',
-      desc: 'Your machine receives full-body servicing, oiling, stitch testing, and is handed back in factory-smooth condition.'
+      desc: 'Your machine receives full-body servicing, lubrication, stitch testing, and is handed back in factory-smooth condition.'
     }
   ];
 
   const defaultWhatsAppText = encodeURIComponent(
-    `Hello A1 Sewing Machine Centre, I would like to enquire about sewing machine servicing.\n\nMy machine details are:\n• Brand:\n• Model (if known):\n• Problem Description:\n\n(I will attach photos/videos of the machine/problem)`
+    `Hello A1 Sewing Machine Centre, I would like to enquire about sewing machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n\n(I will attach photos/videos of the machine/problem)`
   );
 
   return (
@@ -80,11 +80,11 @@ export default function Services({ onOpenBookingModal }) {
         <div className="section-header">
           <div className="section-badge">
             <Wrench size={16} />
-            <span>Repair & Maintenance Hub</span>
+            <span>Singer • USHA • Merritt Repair Hub</span>
           </div>
-          <h2 className="section-title">Our Sewing Machine Services</h2>
+          <h2 className="section-title">Singer, USHA & Merritt Repair Services</h2>
           <p className="section-subtitle">
-            Providing complete sewing machine servicing, expert repairs, genuine spare parts, and motor fittings across Coimbatore.
+            Providing complete sewing machine servicing, expert repairs, genuine spare parts, and motor fittings exclusively for Singer, USHA, and Merritt sewing machines in Coimbatore.
           </p>
         </div>
 
@@ -100,11 +100,11 @@ export default function Services({ onOpenBookingModal }) {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--accent-gold)', fontWeight: 800, fontSize: '1.25rem', marginBottom: '0.75rem' }}>
             <ShieldCheck size={26} />
-            <span>Important Service Policy: Complete Service Approach</span>
+            <span>Important In-Store Service Policy: Complete Service Approach</span>
           </div>
 
           <p style={{ fontSize: '1.02rem', color: 'var(--text-main)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
-            When a customer brings a sewing machine for servicing, our technician performs a <strong>complete inspection and full-body service</strong> of the machine. We do not provide partial servicing based on individual customer-selected components. This ensures your machine is properly checked, aligned, lubricated, and serviced for better, long-lasting performance.
+            When a customer brings a <strong>Singer, USHA, or Merritt</strong> sewing machine for servicing to our store, our technician performs a <strong>complete inspection and full-body service</strong> of the machine. We do not provide partial servicing based on individual customer-selected components. This ensures your machine is properly checked, aligned, lubricated, and serviced for better, long-lasting performance.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
@@ -118,7 +118,7 @@ export default function Services({ onOpenBookingModal }) {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-main)' }}>
               <CheckCircle2 size={18} style={{ color: 'var(--accent-gold)' }} />
-              <span>Peak Performance Guarantee</span>
+              <span>Singer, USHA & Merritt Specialist</span>
             </div>
           </div>
         </div>
@@ -203,10 +203,10 @@ export default function Services({ onOpenBookingModal }) {
               <span>Simple 5-Step Process</span>
             </div>
             <h3 style={{ fontSize: '2rem', color: 'var(--text-main)', fontWeight: 800 }}>
-              How Our Complete Service Works
+              How Our In-Store Service Works
             </h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>
-              We make servicing your sewing machine effortless with our WhatsApp-first communication process.
+              Bring your Singer, USHA, or Merritt machine to our Coimbatore store for complete technician servicing.
             </p>
           </div>
 
@@ -284,13 +284,13 @@ export default function Services({ onOpenBookingModal }) {
         }}>
           <div>
             <div style={{ color: 'var(--accent-gold)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.4rem' }}>
-              ✦ WhatsApp-Only Service Enquiries
+              ✦ Singer, USHA & Merritt Service Enquiries
             </div>
             <h3 style={{ fontSize: '1.85rem', color: '#ffffff', fontWeight: 800, marginBottom: '0.75rem' }}>
-              Have Questions About Machine Servicing?
+              Need Repair for Singer, USHA, or Merritt?
             </h3>
             <p style={{ color: '#cbd5e1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '600px' }}>
-              For all service enquiries, contact our technicians directly on WhatsApp. Share your machine brand, model, and photos or videos for fast diagnostic advice.
+              For all service enquiries, contact our technicians directly on WhatsApp. Share your machine details and bring it to our store at Civil Aerodrome Post, Coimbatore.
             </p>
           </div>
 

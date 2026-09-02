@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Phone, MessageCircle, MapPin, Clock, Send, CheckCircle2, Navigation, Mail, Camera, AlertCircle } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, Clock, Send, CheckCircle2, Navigation, Mail, Camera, AlertCircle, Store } from 'lucide-react';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    brand: '',
+    brand: 'Singer',
     model: '',
     problem: '',
     hasMedia: 'Yes, I can send photos/videos on WhatsApp'
@@ -19,23 +19,23 @@ export default function ContactSection() {
     // Format WhatsApp text payload with requested machine details
     const textPayload = `Hello A1 Sewing Machine Centre,
 
-I would like to enquire about sewing machine servicing. My machine details are:
+I would like to enquire about sewing machine servicing at your store. My machine details are:
 
 👤 Name: ${formData.name}
 📞 Phone: ${formData.phone}
-🧵 Brand: ${formData.brand || 'Not sure'}
+🧵 Brand (Singer/USHA/Merritt): ${formData.brand}
 🔧 Model: ${formData.model || 'Not sure'}
 ⚙️ Problem Description: ${formData.problem || 'Needs complete servicing'}
 📸 Photos/Videos: ${formData.hasMedia}
 
-Please advise on service inspection & availability. Thank you!`;
+I will bring the machine to your store at Civil Aerodrome Post, Coimbatore. Please advise on service inspection & availability. Thank you!`;
 
     const encodedText = encodeURIComponent(textPayload);
     window.open(`https://wa.me/919894194230?text=${encodedText}`, '_blank');
   };
 
   const defaultWhatsAppText = encodeURIComponent(
-    `Hello A1 Sewing Machine Centre, I would like to enquire about sewing machine servicing.\n\nMy machine details are:\n• Brand:\n• Model (if known):\n• Problem Description:\n\n(I will attach photos/videos of the machine/problem)`
+    `Hello A1 Sewing Machine Centre, I would like to enquire about Singer / USHA / Merritt machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n\n(I will attach photos/videos of the machine/problem)`
   );
 
   return (
@@ -48,7 +48,7 @@ Please advise on service inspection & availability. Thank you!`;
           </div>
           <h2 className="section-title">Contact A1 Sewing Machine Centre</h2>
           <p className="section-subtitle">
-            For all sewing machine service enquiries, contact our Coimbatore technicians directly through WhatsApp.
+            For Singer, USHA & Merritt service enquiries, contact our Coimbatore store technicians directly through WhatsApp.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ Please advise on service inspection & availability. Thank you!`;
                 <span>WhatsApp Service Enquiry</span>
               </div>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-main)', lineHeight: 1.5, marginBottom: '1.25rem' }}>
-                Chat directly with our Coimbatore technicians for fast advice, diagnostic quotes, and service scheduling.
+                Chat directly with our Coimbatore technicians for Singer, USHA, and Merritt machine servicing advice and store visit scheduling.
               </p>
               <a
                 href={`https://wa.me/919894194230?text=${defaultWhatsAppText}`}
@@ -106,7 +106,7 @@ Please advise on service inspection & availability. Thank you!`;
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>Business Address</div>
+                    <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 700 }}>Service Centre Address</div>
                     <div style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-main)', lineHeight: 1.5, marginTop: '0.2rem' }}>
                       A1 Sewing Machine Centre<br />
                       41, Alagu Nagar, Civil Aerodrome Post,<br />
@@ -190,10 +190,10 @@ Please advise on service inspection & availability. Thank you!`;
             border: '1px solid var(--border-color)'
           }}>
             <h3 style={{ fontSize: '1.4rem', color: 'var(--primary-navy)', marginBottom: '0.4rem', fontWeight: 800 }}>
-              Service Enquiry Form
+              Singer, USHA & Merritt Service Form
             </h3>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-              Fill in your machine details below to generate a pre-formatted WhatsApp message for our technicians.
+              Fill in your machine details below to generate a pre-formatted WhatsApp message for store servicing.
             </p>
 
             {submitted ? (
@@ -209,7 +209,7 @@ Please advise on service inspection & availability. Thank you!`;
                   Opening WhatsApp...
                 </h4>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                  Your machine details have been formatted. Please complete sending on WhatsApp.
+                  Your machine details are formatted. Please complete sending on WhatsApp and bring your machine to our store.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
@@ -247,15 +247,16 @@ Please advise on service inspection & availability. Thank you!`;
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
                   <div className="form-group">
-                    <label className="form-label">Sewing Machine Brand *</label>
-                    <input
-                      type="text"
-                      className="form-input"
-                      placeholder="e.g. USHA, Singer, Jack"
-                      required
+                    <label className="form-label">Select Brand (Specialized) *</label>
+                    <select
+                      className="form-select"
                       value={formData.brand}
                       onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
-                    />
+                    >
+                      <option value="Singer">Singer</option>
+                      <option value="USHA">USHA</option>
+                      <option value="Merritt">Merritt</option>
+                    </select>
                   </div>
 
                   <div className="form-group">
@@ -263,7 +264,7 @@ Please advise on service inspection & availability. Thank you!`;
                     <input
                       type="text"
                       className="form-input"
-                      placeholder="e.g. Wonder Stitch, F4"
+                      placeholder="e.g. Wonder Stitch, Promise"
                       value={formData.model}
                       onChange={(e) => setFormData({ ...formData, model: e.target.value })}
                     />
@@ -297,7 +298,7 @@ Please advise on service inspection & availability. Thank you!`;
                 }}>
                   <Camera size={16} style={{ color: 'var(--accent-gold)', flexShrink: 0, marginTop: '2px' }} />
                   <div>
-                    <strong>Helpful Tip:</strong> You can attach photos or short videos of your machine and problem directly in the WhatsApp chat for faster diagnostic response!
+                    <strong>Helpful Tip:</strong> Attach photos or short videos of your machine and problem in WhatsApp chat for fast diagnostic advice!
                   </div>
                 </div>
 
