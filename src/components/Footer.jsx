@@ -44,7 +44,7 @@ export default function Footer({ onOpenBookingModal }) {
             </div>
 
             <p style={{ fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.25rem', color: '#94a3b8' }}>
-              Your trusted partner for home & industrial sewing machine sales, expert precision repair, doorstep servicing, and 100% genuine spare parts in Coimbatore.
+              Your trusted partner for Singer, USHA & Merritt sewing machine repair, complete in-store full-body servicing, machine sales, and 100% genuine spare parts in Coimbatore.
             </p>
 
             <div style={{ display: 'flex', gap: '0.75rem' }}>
@@ -96,11 +96,31 @@ export default function Footer({ onOpenBookingModal }) {
 
           {/* Supported Brands */}
           <div>
-            <h4 style={{ color: '#ffffff', fontSize: '1.05rem', marginBottom: '1.2rem', fontWeight: 700 }}>
-              Brands & Spares Handled
+            <h4 style={{ color: '#ffffff', fontSize: '1.05rem', marginBottom: '0.6rem', fontWeight: 700 }}>
+              Repair & Service Brands
             </h4>
+            <div style={{ fontSize: '0.78rem', color: 'var(--accent-gold)', fontWeight: 600, marginBottom: '0.5rem' }}>Exclusive Repair Specialists For:</div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+              {['SINGER', 'USHA', 'MERRITT'].map((b, i) => (
+                <span
+                  key={i}
+                  style={{
+                    backgroundColor: 'rgba(217, 119, 6, 0.2)',
+                    padding: '0.3rem 0.65rem',
+                    borderRadius: 'var(--radius-sm)',
+                    fontSize: '0.8rem',
+                    fontWeight: 700,
+                    color: '#fbbf24',
+                    border: '1px solid rgba(217, 119, 6, 0.4)'
+                  }}
+                >
+                  {b}
+                </span>
+              ))}
+            </div>
+            <div style={{ fontSize: '0.78rem', color: '#94a3b8', fontWeight: 600, marginBottom: '0.5rem' }}>Machines & Spares Also Available For:</div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
-              {['USHA', 'SINGER', 'BROTHER', 'JACK', 'JUKI', 'MERRITT', 'REVO', 'ORGAN NEEDLES'].map((b, i) => (
+              {['BROTHER', 'JACK', 'JUKI', 'REVO', 'ORGAN NEEDLES'].map((b, i) => (
                 <span
                   key={i}
                   style={{
