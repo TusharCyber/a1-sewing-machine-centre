@@ -1,11 +1,11 @@
 import React from 'react';
-import { Phone, MessageCircle, Wrench, ShieldCheck, CheckCircle2, Star, Award, Clock, MapPin, Camera, ChevronRight } from 'lucide-react';
+import { Phone, MessageCircle, Wrench, ShieldCheck, CheckCircle2, Star, Award, Clock, MapPin, Camera, ChevronRight, FileCheck } from 'lucide-react';
 
 export default function Hero({ onOpenBookingModal }) {
   const brands = ['SINGER', 'USHA', 'MERRITT'];
 
   const defaultWhatsAppText = encodeURIComponent(
-    `Hello A1 Sewing Machine Centre, I would like to enquire about sewing machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n\n(I can also attach photos/videos of the problem)`
+    `Hello A1 Sewing Machine Centre, I would like to enquire about Singer / USHA / Merritt machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n• Includes Bobbin Case?: (Yes/No)\n\n(I will attach:\n1. Photo with Bobbin Case\n2. Mandatory Photo of Machine Serial Number plate)`
   );
 
   return (
@@ -71,7 +71,7 @@ export default function Hero({ onOpenBookingModal }) {
                 <span>Our Complete In-Store Service Policy</span>
               </div>
               <p style={{ fontSize: '0.86rem', color: 'var(--text-main)', margin: 0, lineHeight: 1.5 }}>
-                When you bring your <strong>Singer, USHA, or Merritt</strong> sewing machine to our store, our technician performs a <strong>complete inspection and full-body servicing</strong>. We do not provide partial repairs — ensuring your machine receives comprehensive care for smooth performance.
+                When you bring your <strong>Singer, USHA, or Merritt</strong> sewing machine to our store, our technician performs a <strong>complete inspection and full-body servicing</strong>. We do not provide partial repairs. Please indicate if bobbin case is included, and attach photos of the machine + mandatory photo of the <strong>Serial Number plate</strong> on WhatsApp.
               </p>
             </div>
 
@@ -99,8 +99,8 @@ export default function Hero({ onOpenBookingModal }) {
               {[
                 { icon: ShieldCheck, title: 'Complete Full-Body Servicing' },
                 { icon: Award, title: 'Singer, USHA & Merritt Specialist' },
-                { icon: MapPin, title: 'In-Store Service at Civil Aerodrome Post' },
-                { icon: Star, title: '4.9/5 Rating (15,000+ Serviced)' }
+                { icon: FileCheck, title: 'Serial No. Photo Mandatory' },
+                { icon: Camera, title: 'Bobbin Case Photo Verification' }
               ].map((item, idx) => {
                 const IconComponent = item.icon;
                 return (
@@ -211,10 +211,11 @@ export default function Hero({ onOpenBookingModal }) {
               }}>
                 <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--primary-navy)', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                   <MessageCircle size={16} style={{ color: 'var(--accent-green)' }} />
-                  <span>How to Enquire for Service:</span>
+                  <span>Required Service Checklist:</span>
                 </div>
                 <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                  Click WhatsApp → Share Machine Details (Singer / USHA / Merritt) → Send Photo/Video of Problem → Bring Machine to Store.
+                  1. Indicate if bobbin case is included (attach photo if yes)<br />
+                  2. <strong>Mandatory:</strong> Upload photo of machine Serial Number plate on WhatsApp.
                 </div>
                 <a
                   href={`https://wa.me/919894194230?text=${defaultWhatsAppText}`}

@@ -8,7 +8,7 @@ export default function ContactSection() {
     brand: 'Singer',
     model: '',
     problem: '',
-    hasMedia: 'Yes, I can send photos/videos on WhatsApp'
+    hasMedia: 'Yes, I will bring Bobbin Case and send Serial Number plate photo'
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -26,7 +26,11 @@ I would like to enquire about sewing machine servicing at your store. My machine
 🧵 Brand (Singer/USHA/Merritt): ${formData.brand}
 🔧 Model: ${formData.model || 'Not sure'}
 ⚙️ Problem Description: ${formData.problem || 'Needs complete servicing'}
-📸 Photos/Videos: ${formData.hasMedia}
+📦 Bobbin Case Included: ${formData.hasMedia}
+
+(I will attach the following photos on WhatsApp:
+1. 📷 Photo of machine with Bobbin Case (if applicable)
+2. 🔢 MANDATORY: Photo of the machine Serial Number plate)
 
 I will bring the machine to your store at Civil Aerodrome Post, Coimbatore. Please advise on service inspection & availability. Thank you!`;
 
@@ -35,7 +39,7 @@ I will bring the machine to your store at Civil Aerodrome Post, Coimbatore. Plea
   };
 
   const defaultWhatsAppText = encodeURIComponent(
-    `Hello A1 Sewing Machine Centre, I would like to enquire about Singer / USHA / Merritt machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n\n(I will attach photos/videos of the machine/problem)`
+    `Hello A1 Sewing Machine Centre, I would like to enquire about Singer / USHA / Merritt machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n• Bobbin Case Included? (Yes / No):\n\n(I will attach the following photos on WhatsApp:\n1. 📷 Photo of machine with Bobbin Case (if applicable)\n2. 🔢 MANDATORY: Photo of the machine Serial Number plate)`
   );
 
   return (
@@ -286,9 +290,9 @@ I will bring the machine to your store at Civil Aerodrome Post, Coimbatore. Plea
                 {/* Photo/Video Prompt Note */}
                 <div style={{
                   padding: '0.85rem',
-                  backgroundColor: 'var(--bg-subtle)',
+                  backgroundColor: 'var(--accent-gold-light)',
                   borderRadius: 'var(--radius-sm)',
-                  border: '1px border var(--border-color)',
+                  border: '1px solid var(--accent-gold)',
                   marginBottom: '1.25rem',
                   fontSize: '0.85rem',
                   color: 'var(--text-main)',
@@ -298,7 +302,9 @@ I will bring the machine to your store at Civil Aerodrome Post, Coimbatore. Plea
                 }}>
                   <Camera size={16} style={{ color: 'var(--accent-gold)', flexShrink: 0, marginTop: '2px' }} />
                   <div>
-                    <strong>Helpful Tip:</strong> Attach photos or short videos of your machine and problem in WhatsApp chat for fast diagnostic advice!
+                    <strong>Required WhatsApp Photo Checklist:</strong><br/>
+                    📷 Send photo with <strong>Bobbin Case</strong> (if it is included with your machine)<br/>
+                    🔢 <strong>MANDATORY:</strong> Send photo of the machine's <strong>Serial Number plate</strong> before visiting our store.
                   </div>
                 </div>
 

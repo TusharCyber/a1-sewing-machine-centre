@@ -25,7 +25,8 @@ export default function App() {
     name: '',
     phone: '',
     date: '',
-    hasPhotos: 'Yes, will attach on WhatsApp'
+    bobbinCase: 'Yes',
+    hasPhotos: 'Yes, will send Bobbin Case photo + mandatory Serial Number plate photo'
   });
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
@@ -52,7 +53,6 @@ export default function App() {
     e.preventDefault();
     setBookingConfirmed(true);
 
-    // Build pre-filled WhatsApp payload with requested prompts
     const textPayload = `Hello A1 Sewing Machine Centre,
 
 I would like to enquire about Singer / USHA / Merritt machine servicing at your store. My machine details are:
@@ -61,10 +61,14 @@ I would like to enquire about Singer / USHA / Merritt machine servicing at your 
 • Machine Model: ${bookingData.model || 'Not known'}
 • Description of Problem: ${bookingData.problem}
 • Service Mode: Store Visit (Civil Aerodrome Post)
+• Bobbin Case Included: ${bookingData.bobbinCase}
 • Customer Name: ${bookingData.name}
 • Customer Phone: ${bookingData.phone}
 • Preferred Date: ${bookingData.date || 'As soon as possible'}
-• Photos/Videos: ${bookingData.hasPhotos}
+
+(I will attach the following photos on WhatsApp:
+1. 📷 Photo of machine with Bobbin Case (if applicable)
+2. 🔢 MANDATORY: Photo of the machine Serial Number plate)
 
 I will bring the machine to your store at Civil Aerodrome Post, Coimbatore. Thank you!`;
 
@@ -267,17 +271,50 @@ I will bring the machine to your store at Civil Aerodrome Post, Coimbatore. Than
                         </div>
                       </div>
 
+                      <div className="form-group">
+                        <label className="form-label">Is the Bobbin Case included with your machine?</label>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' }}>
+                          {['Yes', 'No'].map((opt) => (
+                            <button
+                              key={opt}
+                              type="button"
+                              onClick={() => setBookingData({ ...bookingData, bobbinCase: opt })}
+                              style={{
+                                padding: '0.7rem',
+                                borderRadius: 'var(--radius-sm)',
+                                border: '2px solid',
+                                borderColor: bookingData.bobbinCase === opt ? 'var(--accent-gold)' : 'var(--border-color)',
+                                backgroundColor: bookingData.bobbinCase === opt ? 'var(--accent-gold-light)' : 'var(--bg-main)',
+                                fontWeight: 700,
+                                color: 'var(--text-main)',
+                                cursor: 'pointer'
+                              }}
+                            >
+                              {opt === 'Yes' ? '✅ Yes, bringing bobbin case' : '❌ No bobbin case'}
+                            </button>
+                          ))}
+                        </div>
+                        {bookingData.bobbinCase === 'Yes' && (
+                          <p style={{ fontSize: '0.8rem', color: 'var(--accent-gold)', fontWeight: 600, marginTop: '0.4rem', margin: '0.4rem 0 0 0' }}>
+                            📷 Please send a photo of the machine with the bobbin case on WhatsApp.
+                          </p>
+                        )}
+                      </div>
+
                       <div style={{
-                        padding: '0.75rem 1rem',
-                        backgroundColor: 'var(--bg-subtle)',
+                        padding: '0.85rem 1rem',
+                        backgroundColor: 'var(--accent-gold-light)',
                         borderRadius: 'var(--radius-sm)',
+                        border: '1px solid var(--accent-gold)',
                         fontSize: '0.84rem',
                         display: 'flex',
-                        alignItems: 'center',
+                        alignItems: 'flex-start',
                         gap: '0.5rem'
                       }}>
-                        <Camera size={16} style={{ color: 'var(--accent-gold)' }} />
-                        <span>You can attach photos/videos of your machine problem directly in WhatsApp.</span>
+                        <Camera size={16} style={{ color: 'var(--accent-gold)', flexShrink: 0, marginTop: '2px' }} />
+                        <div>
+                          <strong>🔢 MANDATORY:</strong> Please send a clear photo of your machine's <strong>Serial Number plate</strong> on WhatsApp before visiting our store. This is required for all service requests.
+                        </div>
                       </div>
 
                       <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem' }}>

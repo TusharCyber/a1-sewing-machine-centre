@@ -49,8 +49,8 @@ export default function Services({ onOpenBookingModal }) {
     },
     {
       number: '2',
-      title: 'Share Machine Details & Media',
-      desc: 'Tell us your machine brand (Singer, USHA, or Merritt), model, issue description, and send photos or short videos.'
+      title: 'Share Machine Details & Photos on WhatsApp',
+      desc: 'Send: (1) Machine brand, model & problem description. (2) Photo showing if bobbin case is included. (3) Mandatory photo of the machine Serial Number plate.'
     },
     {
       number: '3',
@@ -70,7 +70,7 @@ export default function Services({ onOpenBookingModal }) {
   ];
 
   const defaultWhatsAppText = encodeURIComponent(
-    `Hello A1 Sewing Machine Centre, I would like to enquire about sewing machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n\n(I will attach photos/videos of the machine/problem)`
+    `Hello A1 Sewing Machine Centre, I would like to enquire about Singer / USHA / Merritt machine servicing.\n\nMy machine details are:\n• Brand (Singer / USHA / Merritt):\n• Model (if known):\n• Problem Description:\n• Is Bobbin Case included with the machine? (Yes / No):\n\n(I will attach the following photos on WhatsApp:\n1. Photo of machine with Bobbin Case (if applicable)\n2. MANDATORY: Photo of the machine Serial Number plate)`
   );
 
   return (
@@ -269,6 +269,40 @@ export default function Services({ onOpenBookingModal }) {
           </div>
         </div>
 
+        {/* Photo Checklist Banner */}
+        <div style={{
+          backgroundColor: 'var(--accent-gold-light)',
+          borderRadius: 'var(--radius-lg)',
+          padding: '1.5rem 2rem',
+          border: '2px solid var(--accent-gold)',
+          marginBottom: '2rem',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1.25rem',
+          alignItems: 'center'
+        }}>
+          <div>
+            <div style={{ fontWeight: 800, color: 'var(--primary-navy)', fontSize: '1.05rem', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <Camera size={20} style={{ color: 'var(--accent-gold)' }} />
+              Before Bringing Your Machine — Send Us on WhatsApp:
+            </div>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-main)', margin: 0, lineHeight: 1.6 }}>
+              To help us prepare for your machine's service visit, please share the following photos on WhatsApp before arriving.
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+            {[
+              { icon: '📷', label: 'Bobbin Case Photo — if bobbin case is included with the machine' },
+              { icon: '🔢', label: 'Serial Number plate photo — MANDATORY for all machines' }
+            ].map((item, idx) => (
+              <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.88rem', color: 'var(--text-main)', fontWeight: 600 }}>
+                <span style={{ fontSize: '1.1rem', flexShrink: 0 }}>{item.icon}</span>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* WhatsApp Service Callout Box */}
         <div style={{
           backgroundColor: 'var(--primary-navy)',
@@ -290,7 +324,7 @@ export default function Services({ onOpenBookingModal }) {
               Need Repair for Singer, USHA, or Merritt?
             </h3>
             <p style={{ color: '#cbd5e1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '600px' }}>
-              For all service enquiries, contact our technicians directly on WhatsApp. Share your machine details and bring it to our store at Civil Aerodrome Post, Coimbatore.
+              Contact our technicians on WhatsApp with your machine brand, model, problem description, a photo of the bobbin case (if included), and the <strong style={{ color: '#fbbf24' }}>mandatory machine Serial Number plate photo</strong>. Then bring your machine to our store at Civil Aerodrome Post, Coimbatore.
             </p>
           </div>
 
